@@ -1,0 +1,5 @@
+defaults:
+  - default.yaml
+
+# path to logging directory
+log_dir: ${paths.root_dir}/${train_output_dir}/

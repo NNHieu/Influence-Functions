@@ -1,0 +1,21 @@
+# @package _global_
+defaults:
+  - _self_
+  - paths: tracing.yaml
+  - hydra: default.yaml
+  - datamodule: ???
+
+hydra:
+  output_subdir: null
+
+# Output directory is generated dynamically on each run
+# following the pattern ${paths.log_dir}/${task_name}/runs/${run_name}
+task_name: aggeration
+run_name: ${now:%Y-%m-%d}_${now:%H-%M-%S}
+
+# seed for random number generators in pytorch, numpy and python.random
+seed: 12345
+
+top: [0.05, 0.1, 0.15, 0.2]
+train_output_dir: ???
+tracing_method: ???

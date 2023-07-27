@@ -1,0 +1,6 @@
+_target_: model_zoo.wrn.WideResNet
+depth: 40
+num_classes: 10
+widen_factor: 2
+dropRate: 0.3
+name: wrn

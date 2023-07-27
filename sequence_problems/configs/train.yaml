@@ -1,0 +1,21 @@
+# @package _global_
+defaults:
+  - _self_
+  - paths: default.yaml
+  - hydra: default.yaml
+  - net: bert.yaml
+  - datamodule: ???
+  - logger: tensorboard.yaml
+
+# Output directory is generated dynamically on each run
+# following the pattern ${paths.log_dir}/${task_name}/runs/${run_name}
+task_name: train
+run_name: ${datamodule.dataset_name}_${datamodule.flip_percent}_${net.name}/${now:%Y-%m-%d}_${now:%H-%M-%S}
+
+# seed for random number generators in pytorch, numpy and python.random
+seed: 12345
+
+gpus: 2
+learning_rate: 5e-5
+max_epochs: 10
+dev_run: False

@@ -1,0 +1,22 @@
+# @package _global_
+defaults:
+  - _self_
+  - paths: tracing.yaml
+  - hydra: default.yaml
+  - net: wrn.yaml
+  - datamodule: binary_cifar10.yaml
+  - tracer: gd.yaml
+
+train_output_dir: outputs/train/bin_cifar10_wrn/2022-12-12_14-57-00/
+
+# Output directory is generated dynamically on each run
+# following the pattern ${paths.log_dir}/${task_name}/runs/${run_name}
+task_name: tracing
+run_name: ${tracer._target_}
+# seed for random number generators in pytorch, numpy and python.random
+seed: 12345
+
+learning_rate: 1e-3
+max_epochs: 10
+dev_run: False
+

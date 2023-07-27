@@ -1,0 +1,15 @@
+_target_: datamodule.TextClassifierDataModule
+dataset_name: snli # for output dir name
+max_seq_length: 128
+tokenizer: 
+  _target_: transformers.AutoTokenizer.from_pretrained
+  pretrained_model_name_or_path: bert-base-uncased
+  use_fast: True
+train_csv: ${oc.env:PYTORCH_DATASET_ROOT}/snli/raw/train.csv
+val_csv : ${oc.env:PYTORCH_DATASET_ROOT}/snli/raw/dev.csv
+test_csv : ${oc.env:PYTORCH_DATASET_ROOT}/snli/raw/test.csv
+train_batch_size: 64
+flip_percent: 0.2
+flip_seed: 42
+test_batch_size: 128
+num_workers: 8

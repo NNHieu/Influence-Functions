@@ -1,0 +1,17 @@
+_target_: datamodule.TextClassifierDataModule
+data_root: ${oc.env:PYTORCH_DATASET_ROOT}
+dataset_name: imdb # for output dir name
+tokenizer: 
+  _target_: transformers.AutoTokenizer.from_pretrained
+  pretrained_model_name_or_path: bert-base-uncased
+  use_fast: True
+max_seq_length: 128
+
+flip_percent: 0
+flip_seed: 2147483647 #https://pytorch.org/docs/stable/generated/torch.Generator.html
+
+train_batch_size: 64
+val_batch_size: 128
+test_batch_size: 128
+num_workers: 8
+use_denoised_data: True

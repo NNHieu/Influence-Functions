@@ -1,0 +1,4 @@
+_target_: models.bert_classifier.BertClassifier
+num_classes: 3
+path_pretrained_or_name: bert-base-uncased
+name: bert # for output dir name

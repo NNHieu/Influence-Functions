@@ -1,0 +1,6 @@
+_target_: core.tracer.IF
+damp: 0.01 
+scale: 25 
+recursion_depth: 10 
+r: 1
+use_exact_hessian: False

@@ -1,0 +1,22 @@
+# @package _global_
+defaults:
+  - _self_
+  - paths: tracing.yaml
+  - hydra: default.yaml
+  - net: bert.yaml
+  - datamodule: ???
+  - tracer: ???
+
+datamodule:
+  train_batch_size: 128
+  flip_percent: null # This variable is from train config 
+  flip_seed: null # This variable is from train config
+
+train_output_dir: ???
+
+# Output directory is generated dynamically on each run
+# following the pattern ${paths.log_dir}/${task_name}/runs/${run_name}
+task_name: tracing
+run_name: ${tracer._target_}
+# seed for random number generators in pytorch, numpy and python.random
+seed: 12345

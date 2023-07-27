@@ -1,0 +1,9 @@
+_target_: datamodule.Cifar10DM
+chosen_classes: null
+train_batch_size: 64
+flip_percent: 0.2
+rand_seed: 42 
+test_batch_size: 128
+num_workers: 4
+dataset_name: cifar10 # for output dir name
+tracing_test_size: 500
